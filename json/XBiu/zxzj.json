@@ -1,0 +1,49 @@
+{
+
+	// 所有的选填字段都可以不填，程序会自己去猜，不一定能猜得出来，猜不出来的得自己去补规则	//(必填) 主页地址，建议填list段中的url,程序会从url中提取homeUrl, url中至少要包含{cateId}和{catePg}才能被识别
+
+	// https://www.zxzj.vip/vodshow/{cateId}-{area}--{class}-----{catePg}---{year}.html
+
+	// https://www.zxzj.vip/list/{cateId}-{catePg}.html
+
+	"homeUrl": "https://www.zxzj.vip/",
+
+	//(选填) http请求需要的header，一般就填个UA
+
+	"header":{
+
+		"User-Agent":"Mozilla/5.0 (Linux; Android 8.1.0; ALP-AL00 Build/HUAWEIALP-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/63.0.3239.83 Mobile Safari/537.36 T7/10.13 baiduboxapp/10.13.0.11 (Baidu; P1 8.1.0)"
+
+	},
+
+	//(选填) 分类名
+
+	"cateManual": {
+
+		"电影": "1",
+
+		"美剧": "2",
+
+		"韩剧": "3",
+
+		"日剧": "4",
+
+		"泰剧": "5",
+
+		"动漫": "6"
+
+	},
+
+	//(选填) 列表页 
+
+	"list":{
+
+		//(选填) 当前页面解析区域截取，程序会从截取后的数据中查找各字段，这里只是演示，按实际需求填写
+
+		"region":["<html>", "</html>"],
+
+		//"url": "https://www.zxzj.vip/list/{cateId}-{catePg}.html",
+
+		//(选填) 列表页的页面地址，具体规则和xpath一致，不存在在里会使用homeUrl，但是homeUrl必须是带{cateId}\{catePg}的这个格式
+
+		"url": "https://www.zxzj.vip/vodshow/{cateId}-{area}--
